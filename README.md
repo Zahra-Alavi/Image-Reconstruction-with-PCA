@@ -18,17 +18,33 @@ This repository contains Python code for image reconstruction using Principal Co
 
 The first thing to do with any new dataset is to look at it! Here are the first 12 images of the original set: 
 
-![First 12 photos from the original dataset](images/12orig.png)
+<p align="center">
+  <img src="images/12orig.png" alt="First 12 photos from the original dataset">
+  <br>
+  <i>First 12 photos from the original dataset</i>
+</p>
+
 
 As expected the "average" face is a blend of all facial features. It has a generalized facial structure and has a smooth and less detailed appearance: 
 
-![Average Face](images/average_face.png)
+<p align="center">
+  <img src="images/average_face.png" alt="Average Face">
+  <br>
+  <i>Average Face</i>
+</p>
+
+
 
 ### PCA
 
 The first few principle components capture the highest variability in the dataset. Looking at these eigenfaces it seems like the first few represent the variation in lighting, head direction and facial expression such as smiles. The top 12 "eigenface"s are:
 
-![Top 12 eigenfaces](images/12eigen.png)
+
+<p align="center">
+  <img src="images/12eigen.png" alt="Top 12 eigenfaces">
+  <br>
+  <i>Top 12 eigenfaces</i>
+</p>
 
 ### Image Reconstruction
 
@@ -36,20 +52,32 @@ After applying PCA and projecting the original data into the lower-dimensional s
 
 Let's look at the first 12 images reconstructed with 1, 10, 100 and 1288 components respectively: 
 
-![Reconstructed with 1 PC](images/re_1.png)
+<p align="center">
+  <img src="images/re_1.png" alt="Reconstructed with 1 PC" width="200"><br>
+  <i>Reconstructed with 1 PC</i>
+</p>
+<p align="center">
+  <img src="images/re_10.png" alt="Reconstructed with 10 PCs" width="200"><br>
+ <i>Reconstructed with 10 PCs</i>
+</p>
+<p align="center">
+  <img src="images/re_100.png" alt="Reconstructed with 100 PCs" width="200"><br>
+  <i>Reconstructed with 100 PCs</i>
+</p>
+<p align="center">
+  <img src="images/re_1288.png" alt="Reconstructed with 1288 PCs" width="200"><br>
+  <i>Reconstructed with 1288 PCs</i>
+</p>
 
-![Reconstructed with 10 PC](images/re_10.png)
-
-![Reconstructed with 100 PC](images/re_100.png)
-
-![Reconstructed with 1288 PC](images/re_1288.png)
 
 
 ### Clustering Output
 
 To see the effect of lower-dimensional representations on clustering performance, we apply k-means and k-medoids algorithms on reconstructed images. For simplicity let's only consider two classes (two individuals) and select only 40 images of each. Then compute the principal components for the entire image dataset and project the newly generated dataset of the two individuals into a lower dimension (varying the number of principal components), and compute the scores of each clustering algorithm. Here is a plot of the clustering score versus the number of components for each clustering algorithm: 
 
-![Clustering Scores vs Number of PCs](images/plot.png)
+<p align="center">
+  <img src="images/plot.png" alt="Clustering Scores vs Number of PCs">
+
 
 
 Note that as the number of principle components increases,the clustering algorithms capture more nuanced features, leading to higher scores. However; athere is a plateau in score improvement beyond 5-10 principal components, indicating that additional components do not contribute meaningful variation to distinguish the classes further. Also notice that K-medoids perform better than k-means in this region since k-medoids is more robust to outliers.
