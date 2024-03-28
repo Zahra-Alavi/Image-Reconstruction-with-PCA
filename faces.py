@@ -1,11 +1,9 @@
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 import util
-# TODO: change cluster_5350 to cluster if you do the extra credit
+
 from cluster import *
 
 ######################################################################
