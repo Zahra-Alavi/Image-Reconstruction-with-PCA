@@ -1,6 +1,5 @@
 """
-Author:
-Date:
+Author: Zahra Alavi
 Description: Utilities for Famous Faces
 """
 
